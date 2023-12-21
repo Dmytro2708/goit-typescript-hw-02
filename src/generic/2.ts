@@ -11,7 +11,7 @@ type AllType = {
   weight: number
 }
 
-function compare (top, bottom): AllType {
+function compare<T extends AllType> (top: Pick<T, keyof AllType>, bottom: Pick<T, keyof AllType>): AllType {
   return {
     name: top.name,
     color: top.color,
@@ -21,3 +21,9 @@ function compare (top, bottom): AllType {
 }
 
 export {};
+
+function merge<T extends object, K extends object> (objA: T, objB: K) {
+  return Object.assign(objA, objB);
+}
+
+export {}
