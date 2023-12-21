@@ -21,9 +21,3 @@ function compare<T extends AllType> (top: Pick<T, keyof AllType>, bottom: Pick<T
 }
 
 export {};
-
-function merge<T extends object, K extends object> (objA: T, objB: K) {
-  return Object.assign(objA, objB);
-}
-
-export {}
